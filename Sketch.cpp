@@ -1,6 +1,7 @@
 ﻿#include "Servo_PWM.h"
 
-int main(void) {
+int main(void)
+{
 	
 	DDRB |= _BV(2); // set PD10 as output
 	DDRB |= _BV(1); // set PD9 as output
