@@ -2,7 +2,8 @@
 #include "Resistor_ADC.h"
 #include "Led_RGB.h"
 
-int main(void) {
+int main(void)
+{
 	//setup
 	init_PWM(); //D10, D9
 	init_LED(); //D6, D5, D3
