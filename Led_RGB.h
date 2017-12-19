@@ -13,7 +13,7 @@ void init_LED()
 void Red_ON()
 {
 	PORTD |= _BV(6);
-	_delay_ms(500);
+	_delay_ms(250);
 }
 
 void Red_OFF()
@@ -24,7 +24,7 @@ void Red_OFF()
 void Green_ON()
 {
 	PORTD |= _BV(5);
-	_delay_ms(500);
+	_delay_ms(250);
 }
 
 void Green_OFF()
@@ -35,7 +35,7 @@ void Green_OFF()
 void Blue_ON()
 {
 	PORTD |= _BV(3);
-	_delay_ms(500);
+	_delay_ms(250);
 }
 
 void Blue_OFF()

@@ -1,6 +1,5 @@
 ﻿#include "Servo_PWM.h"
-#include "Resistor_ADC.h"
-#include "Led_RGB.h"
+#include "Color_Detector.h"
 
 int main(void)
 {
@@ -8,34 +7,31 @@ int main(void)
 	init_PWM(); //D10, D9
 	init_LED(); //D6, D5, D3
 	Init_ADC(); //A0
+	int redValue = 0;
+	int greenValue = 0;
+	int blueValue = 0;
 	
 	//loop
 	while (1)
 	{
-		if(Read_ADC(0) > 512)
-		{
-			Red_OFF();
-			Blue_OFF();
-			Green_OFF();
-			Red_ON();
-		}
-		else{
-			Red_OFF();
-			Blue_ON();
-			Blue_OFF();
-			Green_ON();
-			Green_OFF();
-			Red_ON();
-		}
-		Red_OFF();
 		
-		/*
 		moveToTake_PD9();
+		
+		moveToScan_PD9();
+		//collect data
+		redValue = Red_Value();
+		greenValue = Green_Value();
+		blueValue = Blue_Value();
+		//calculate proper location
+		if( redValue >= greenValue && redValue >= blueValue)
+			moveToRed_PD10();
+		else if (greenValue >= redValue && greenValue >= blueValue)
+				moveToGreen_PD10();
+			else
+				moveToBlue_PD10();
+		
 		moveToDrop_PD9();
-		moveToRed_PD10();
-		moveToGreen_PD10();
-		moveToBlue_PD10();
-		moveToGreen_PD10();
-		*/
+		
+
 	}
 }
