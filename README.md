@@ -1,7 +1,7 @@
-# Candy_Color_Sort
+# Candy_Color_Sorter
 Done
 
-This candy color sort robot source code is for a project from university.
+This candy color sorter robot source code is for a project from university.
 
 HW:
   - 1 x Arduino Uno ATmega328P
