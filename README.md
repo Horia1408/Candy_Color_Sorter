@@ -1,5 +1,5 @@
 # Candy_Color_Sorter
-Done
+State: Done
 
 This candy color sorter robot source code is for a project from university.
 
